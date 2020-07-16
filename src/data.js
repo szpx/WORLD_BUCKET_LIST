@@ -3,7 +3,7 @@ const data = [
         id: 1,
         imagePath: "https://www.atlasobscura.com/places/havasupai-falls",
         description: "Havanasupai Falls - USA, Arizona",
-        done: false,
+        done: true,
         link: "https://www.roadtrippin.fr/arizona/havasupai-falls/havasupai-falls.php",
         coordinates: {
             lat: 36.255538,

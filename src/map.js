@@ -2,15 +2,20 @@ let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 36.255538, lng: -112.697993 },
-    zoom: 10
+    center: { lat: 48.881356 , lng: 2.362160 },
+    zoom: 4
   });
   
-  const marker = new google.maps.Marker({
-    position: { lat: 36.255538, lng: -112.697993 },
-    icon: "./img/marker.png",
-    map: map
-  });
+
 }
 
-export {initMap};
+function addMarkerOnMap(dream) {
+  const marker = new google.maps.Marker({
+    position: dream.coordinates,
+    icon: dream.done ? "./img/marker_done.png" : "./img/marker.png",
+    map: map
+  });
+
+}
+
+export {initMap,addMarkerOnMap};

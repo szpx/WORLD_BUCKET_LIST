@@ -90,11 +90,14 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _dream__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+
 
 
 function init() {
-    Object(_map_js__WEBPACK_IMPORTED_MODULE_0__["initMap"])();
+    Object(_map__WEBPACK_IMPORTED_MODULE_0__["initMap"])();
+    Object(_dream__WEBPACK_IMPORTED_MODULE_1__["buildAllDreams"])();
 }
 
 window.init = init;
@@ -106,20 +109,95 @@ window.init = init;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initMap", function() { return initMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addMarkerOnMap", function() { return addMarkerOnMap; });
 let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 36.255538, lng: -112.697993 },
-    zoom: 10
+    center: { lat: 48.881356 , lng: 2.362160 },
+    zoom: 4
   });
   
+
+}
+
+function addMarkerOnMap(dream) {
   const marker = new google.maps.Marker({
-    position: { lat: 36.255538, lng: -112.697993 },
-    icon: "./img/marker.png",
+    position: dream.coordinates,
+    icon: dream.done ? "./img/marker_done.png" : "./img/marker.png",
     map: map
   });
+
 }
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildAllDreams", function() { return buildAllDreams; });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+
+
+
+function buildAllDreams() {
+    _data__WEBPACK_IMPORTED_MODULE_0__["data"].forEach(buildOneDream);
+}
+
+function buildOneDream(dream) {
+    Object(_map__WEBPACK_IMPORTED_MODULE_1__["addMarkerOnMap"])(dream)
+}
+
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+const data = [
+    {
+        id: 1,
+        imagePath: "https://www.atlasobscura.com/places/havasupai-falls",
+        description: "Havanasupai Falls - USA, Arizona",
+        done: true,
+        link: "https://www.roadtrippin.fr/arizona/havasupai-falls/havasupai-falls.php",
+        coordinates: {
+            lat: 36.255538,
+            lng: -112.697993
+        }
+
+    },
+    {
+        id: 2,
+        imagePath: "https://www.partir.com/images/incontournables/polynesie-hiva-oa.jpg",
+        description: "Hiva Oa (îles Marquises) - Polynésie française",
+        done: false,
+        link: "https://pacifique-a-la-carte.com/voyage-polynesie/archipel-des-marquises/sejour-hiva-oa",
+        coordinates: {
+            lat: -9.765723,
+            lng: -139.052422
+        }
+    },
+    {
+        id: 3,
+        imagePath: "https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_650/https://www.alloweekend.com/wordpress/wp-content/uploads/2013/03/1.jpg",
+        description: "Calanque d'En Vau - France, La Ciotat",
+        done: false,
+        link: "https://www.detoursenfrance.fr/en-vau-lune-des-plus-belles-calanques-de-france-7783",
+        coordinates: {
+            lat: 43.202337, 
+            lng: 5.497670
+        }
+    }
+];
 
 
 
