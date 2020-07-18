@@ -1,7 +1,7 @@
 const data = [
     {
         id: 1,
-        imagePath: "https://www.atlasobscura.com/places/havasupai-falls",
+        imagePath: "./img/Havanu.jpg",
         description: "Havanasupai Falls - USA, Arizona",
         done: true,
         link: "https://www.roadtrippin.fr/arizona/havasupai-falls/havasupai-falls.php",
