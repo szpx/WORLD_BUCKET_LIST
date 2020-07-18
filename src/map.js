@@ -1,11 +1,22 @@
 let map;
+let panorama;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 0 , lng: 0 },
-    zoom: 2
+    zoom: 2,
+    streetViewControl: false
   });
-  
+
+  panorama = new google.maps.StreetViewPanorama(
+    document.getElementById("panorama"), {
+      position: { lat: 36.255309, lng: -112.698277 },
+      pov: {
+        heading: 200,
+        pitch: 0,
+        zoom: 0
+      }
+    });
 
 }
 
