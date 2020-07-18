@@ -2,7 +2,7 @@ const data = [
     {
         id: 1,
         imagePath: "./img/Havanu.jpg",
-        description: "Havanasupai Falls - USA, Arizona",
+        description: "Chutes d'Havanasupai - USA, Arizona",
         done: true,
         link: "https://www.roadtrippin.fr/arizona/havasupai-falls/havasupai-falls.php",
         coordinates: {
