@@ -1,5 +1,9 @@
 let map;
 let panorama;
+const panoramaElement = document.querySelector("#panorama");
+const resetMapButton = document.getElementById("reset-map");
+const backToMapButton = document.getElementById("back-to-map");
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -18,6 +22,10 @@ function initMap() {
       }
     });
 
+    addMapListeners();
+
+    panoramaElement.style.display = "none";
+    backToMapButton.style.display = "none";
 }
 
 function addMarkerOnMap(dream) {
@@ -30,14 +38,11 @@ function addMarkerOnMap(dream) {
   marker.addListener('click', function() {
     zoomOn(marker.getPosition());
   });
-
-  addMapListeners();
-  }
-
-  const resetMapButton = document.getElementById("reset-map");
+}
 
   function addMapListeners() {
     resetMapButton.addEventListener("click", resetMap); 
+    backToMapButton.addEventListener("click", backToMap); 
   }
 
   function zoomOn(position) {
@@ -52,4 +57,17 @@ function addMarkerOnMap(dream) {
     map.setZoom(2);
   }
 
-export {initMap,addMarkerOnMap};
+  function backToMap() {
+    panoramaElement.style.display = "none";
+    backToMapButton.style.display = "none";
+    resetMapButton.style.display = "block";
+  }
+
+  function visitDreamOnMap(position) {
+    panorama.setPosition(position)
+    panoramaElement.style.display = "block";
+    backToMapButton.style.display = "block";
+    resetMapButton.style.display = "none";
+  }
+  
+export {initMap,addMarkerOnMap,visitDreamOnMap};

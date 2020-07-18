@@ -38,7 +38,7 @@ body {
 .card{
     margin: 20px;
 }
-#reset-map{
+#reset-map, #back-to-map{
     position: absolute;
     z-index: 10;
     left: calc(50% - 75px);
