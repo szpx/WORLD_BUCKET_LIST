@@ -3,7 +3,7 @@ const data = [
         id: 1,
         imagePath: "./img/Havanu.jpg",
         description: "Chutes d'Havanasupai - USA, Arizona",
-        done: true,
+        done: false,
         link: "https://www.roadtrippin.fr/arizona/havasupai-falls/havasupai-falls.php",
         coordinates: { 
             lat: 36.255309, 
