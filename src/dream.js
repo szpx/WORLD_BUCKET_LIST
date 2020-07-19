@@ -19,7 +19,7 @@ function buildOneDream(dream) {
     <h5 class="card-header font-weight-bold"> ${dream.description}</h5>
     <img src="${dream.imagePath}" class="card-img-top" alt="...">
     <div class="card-body">
-        <a href="#" class="button-action btn btn-${dream.done?"secondary":"danger"} font-weight-bold btn-block">${dream.done?"Je veux le refaire":"Je me lance !"}</a>  
+        <a href="#" class="button-action btn btn-${dream.done?"secondary":"danger"} font-weight-bold btn-block">${dream.done?"Je veux le refaire":"Je l'ai fais !"}</a>  
     </div>
     <div class="card-footer text-muted text-center">
         <a href="#" class="button-visit btn btn-outline-dark btn-sm">Visiter</a>
